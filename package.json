@@ -1,0 +1,16 @@
+{
+  "name": "weekly-love",
+  "version": "1.0.0",
+  "description": "The favorite track you're listening to this week",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.4.1"
+  }
+}
