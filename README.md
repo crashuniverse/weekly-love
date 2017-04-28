@@ -10,5 +10,5 @@ API from [lastfm](https://www.last.fm/api)
 ## Setup
 `npm i`
 
-## Run
-`npm run build`. The `index.html` file with `dist/bundle.js` works as a build.
+## Build
+`npm run build`. The `dist/` works as a build.
