@@ -10,5 +10,8 @@ API from [lastfm](https://www.last.fm/api)
 ## Setup
 `npm i`
 
+## Run
+`npm start`
+
 ## Build
 `npm run build`. The `dist/` works as a build.

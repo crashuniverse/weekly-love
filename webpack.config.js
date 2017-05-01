@@ -1,10 +1,12 @@
 var path = require('path');
+var webpack = require('webpack');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: 'index.html',
   inject: 'body'
 });
+var HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin();
 
 module.exports = {
   entry: './app/index.js',
@@ -19,5 +21,13 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    HotModuleReplacementPluginConfig
+  ],
+  devServer: {
+    hot: true,
+    inline: true,
+    port: 9000
+  }
 };
