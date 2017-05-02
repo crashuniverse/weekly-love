@@ -7,6 +7,8 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 });
 var HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin();
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPluginConfig = new ExtractTextPlugin('style.css');
 
 module.exports = {
   entry: './app/index.js',
@@ -19,11 +21,18 @@ module.exports = {
       test: /\.js$/,
       loader: 'babel-loader',
       exclude: /node_modules/
+    }, {
+      test: /\.scss$/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: ['css-loader', 'sass-loader']
+      })
     }]
   },
   plugins: [
     HtmlWebpackPluginConfig,
-    HotModuleReplacementPluginConfig
+    HotModuleReplacementPluginConfig,
+    ExtractTextPluginConfig
   ],
   devServer: {
     hot: true,
