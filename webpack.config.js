@@ -1,42 +1,42 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: 'index.html',
-  inject: 'body'
+  inject: 'body',
 });
-var HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin();
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ExtractTextPluginConfig = new ExtractTextPlugin('style.css');
+const HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin();
+const ExtractTextPluginConfig = new ExtractTextPlugin('style.css');
 
 module.exports = {
   entry: './app/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     loaders: [{
       test: /\.js$/,
       loader: 'babel-loader',
-      exclude: /node_modules/
+      exclude: /node_modules/,
     }, {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: ['css-loader', 'sass-loader']
-      })
-    }]
+        use: ['css-loader', 'sass-loader'],
+      }),
+    }],
   },
   plugins: [
     HtmlWebpackPluginConfig,
     HotModuleReplacementPluginConfig,
-    ExtractTextPluginConfig
+    ExtractTextPluginConfig,
   ],
   devServer: {
     hot: true,
     inline: true,
-    port: 9000
-  }
+    port: 9000,
+  },
 };
