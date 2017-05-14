@@ -1,4 +1,52 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
 .container {
   width: 900px;
   margin: 0 auto;
+}
+
+header {
+  margin-bottom: 60px;
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.track-container {
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (min-width: 321px) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.image {
+  margin-right: 40px;
+}
+
+.track {
+  font-size: 4em;
+  font-weight: 100;
+  margin: 10px 0;
+}
+
+.artist {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 20px 0;
 }
