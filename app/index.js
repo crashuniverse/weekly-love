@@ -33,8 +33,12 @@ class App extends React.Component {
             <img src={this.state && this.state.track && this.state.track.image} alt="" />
           </div>
           <div>
-            <div className="track">{ this.state && this.state.track && this.state.track.name }</div>
-            <div className="artist">{ this.state && this.state.track && this.state.track.artist }</div>
+            <div className="track">
+              {this.state && this.state.track && this.state.track.name}
+            </div>
+            <div className="artist">
+              {this.state && this.state.track && this.state.track.artist}
+            </div>
           </div>
         </div>
         <footer>API from <a href="https://www.last.fm/api" target="_blank" rel="noopener noreferrer">lastfm</a></footer>
