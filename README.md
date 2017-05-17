@@ -1,4 +1,4 @@
-# Weekly Love
+# weekly love [![Build Status](https://travis-ci.org/crashuniverse/weekly-love.svg?branch=master)](https://travis-ci.org/crashuniverse/weekly-love)
 
 The favorite track you're listening to this week.
 
