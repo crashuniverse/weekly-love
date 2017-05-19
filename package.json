@@ -4,7 +4,7 @@
   "description": "The favorite track you're listening to this week",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --env=prod -p --progress --profile --colors",
     "dev": "webpack-dev-server",
     "lint": "eslint .",
     "start": "npm run dev",
