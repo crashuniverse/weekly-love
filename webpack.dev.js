@@ -12,7 +12,7 @@ const HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin(
 const ExtractTextPluginConfig = new ExtractTextPlugin('style.css');
 
 module.exports = {
-  entry: './app/index.js',
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),

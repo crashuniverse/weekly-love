@@ -10,7 +10,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 const ExtractTextPluginConfig = new ExtractTextPlugin('style-[hash].css');
 
 module.exports = {
-  entry: './app/index.js',
+  entry: './src/index.js',
   output: {
     filename: '[name]-[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
