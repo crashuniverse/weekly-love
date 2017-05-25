@@ -3,6 +3,8 @@ module.exports = {
   globals: {
     document: true,
     fetch: true,
+    test: true,
+    expect: true,
   },
   rules: {
     'react/jsx-filename-extension': [1, {
