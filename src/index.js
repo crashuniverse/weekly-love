@@ -26,7 +26,7 @@ class App extends React.Component {
       <div className="container">
         <header>
           <h1>weekly love</h1>
-          <div>The favorite track you are listening to this week.</div>
+          <div>The favorite track you were listening to last week.</div>
         </header>
         <div className="track-container">
           <div className="image">
@@ -38,6 +38,9 @@ class App extends React.Component {
             </div>
             <div className="artist">
               {this.state && this.state.track && this.state.track.artist}
+            </div>
+            <div className="count">
+              {this.state && this.state.track && this.state.track.playcount && `${this.state.track.playcount} times in week of ${this.state.track.week}`}
             </div>
           </div>
         </div>
