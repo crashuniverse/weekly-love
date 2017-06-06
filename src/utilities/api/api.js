@@ -18,18 +18,24 @@ const api = (username) => {
         json.weeklytrackchart &&
         json.weeklytrackchart.track &&
         json.weeklytrackchart.track[0];
-      const weekTimestamp = json &&
+      const weekStartTimestamp = json &&
         json.weeklytrackchart &&
         json.weeklytrackchart['@attr'] &&
         json.weeklytrackchart['@attr'].from;
-      const week = getMonthAndDate(weekTimestamp);
+      const weekEndTimestamp = json &&
+        json.weeklytrackchart &&
+        json.weeklytrackchart['@attr'] &&
+        json.weeklytrackchart['@attr'].to;
+      const weekStartDate = getMonthAndDate(weekStartTimestamp);
+      const weekEndDate = getMonthAndDate(weekEndTimestamp);
       const track = Object.assign({}, {
         name: trackRaw.name,
         playcount: trackRaw.playcount,
         url: trackRaw.url,
         artist: trackRaw.artist['#text'],
         image: getImage(trackRaw.image),
-        week,
+        weekStartDate,
+        weekEndDate,
       });
       return track;
     })

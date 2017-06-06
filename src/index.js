@@ -40,7 +40,11 @@ class App extends React.Component {
               {this.state && this.state.track && this.state.track.artist}
             </div>
             <div className="count">
-              {this.state && this.state.track && this.state.track.playcount && `${this.state.track.playcount} times in week of ${this.state.track.week}`}
+              {
+                this.state && this.state.track && this.state.track.playcount &&
+                `${this.state.track.playcount} times in week of
+                ${this.state.track.weekStartDate} - ${this.state.track.weekEndDate}`
+              }
             </div>
           </div>
         </div>
