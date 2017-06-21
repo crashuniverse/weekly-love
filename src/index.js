@@ -1,11 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import UserDashboard from './components/userDashboard/userDashboard';
 
 const App = () => (
   <Router>
-    <Route path="/" component={UserDashboard} />
+    <div>
+      <Redirect from="/" to="/users/crashuniverse" />
+      <Route path="/users/:id" component={UserDashboard} />
+    </div>
   </Router>
 );
 

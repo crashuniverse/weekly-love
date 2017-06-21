@@ -16,6 +16,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     loaders: [{
@@ -39,5 +40,6 @@ module.exports = {
     hot: true,
     inline: true,
     port: 9000,
+    historyApiFallback: true,
   },
 };
