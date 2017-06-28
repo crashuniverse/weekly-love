@@ -6,7 +6,6 @@ import UserDashboard from './components/userDashboard/userDashboard';
 const App = () => (
   <Router>
     <div>
-      <Redirect from="/" to="/users/crashuniverse" />
       <Route path="/users/:id" component={UserDashboard} />
     </div>
   </Router>
