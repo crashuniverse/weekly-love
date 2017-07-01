@@ -1,13 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import UserDashboard from './components/userDashboard/userDashboard';
 
 const App = () => (
-  <Router>
-    <div>
+  <Router basename="/weekly-love">
+    <Switch>
+      <Route exact path="/">
+        <Redirect to="/users/crashuniverse" />
+      </Route>
       <Route path="/users/:id" component={UserDashboard} />
-    </div>
+    </Switch>
   </Router>
 );
 
