@@ -8,9 +8,9 @@ after_success:
   - npm run coverage
   - npm run build
 deploy:
-  provider: pages
+  provider: firebase
+  token: $FIREBASE_TOKEN,
   local_dir: 'dist'
   skip_cleanup: true
-  github_token: $GITHUB_PUBLIC_REPO_TOKEN
   on:
     branch: master
