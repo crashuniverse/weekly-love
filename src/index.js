@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import UserDashboard from './components/userDashboard/userDashboard';
 
 const App = () => (
-  <Router basename="/weekly-love">
+  <Router basename="/">
     <Switch>
       <Route exact path="/">
         <Redirect to="/users/crashuniverse" />
